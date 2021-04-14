@@ -1,7 +1,5 @@
 # Library management System
-
-* Add a brief discription about the project
-* Add the information about extra folders or files added
+![Library](https://github.com/Diptiman1999/LTTS_MiniProject_C/blob/master/1_Requirements/library.jpg)
 
 
 
