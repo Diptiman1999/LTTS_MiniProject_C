@@ -32,3 +32,20 @@ Digitization of library helps to keep all the records secured and retrievable wh
 ## When:
 ## Where:
 ## How:
+
+
+# Detail requirements
+## High Level Requirements: 
+User here refers to Librarian.
+
+| ID | Description | Category | Status | 
+| ----- | ----- | ------- | ---------|
+| HR01 | User shall be able to add new book | Techincal | Implemented | 
+| HR02 | User shall be able to display books | Techincal | Implemented |
+| HR03 | User shall be able to delete book | Techincal | Implemented |
+| HR04 | User shall be able to search book | Techincal | Implemented |
+| HR05 | User shall be able to update credentials | Techincal | Implemented |
+| HR06 | User shall be able to read data from a file | Techincal | TBD-S1 |
+| HR07 | Data should not be lost in case of failure | Scenario | FUTURE |
+| HR08 | Data should always be stored when closing the system | Scenario | Implemented |
+
