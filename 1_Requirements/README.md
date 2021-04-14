@@ -27,11 +27,15 @@ Digitization of library helps to keep all the records secured and retrievable wh
 # 4W&#39;s and 1&#39;H
 
 ## Who:
-
+Schools, Colleges and Universities have started using this library management system.
 ## What:
+Able to manage books efficiently and effectively.
 ## When:
+Earlier library managers used to store books informations in registers. But with new technology it will save time aswell as efforts.
 ## Where:
+This system is used all over the world.
 ## How:
+This system will help to store books information effectively search,delete them efficiently.
 
 
 # Detail requirements
