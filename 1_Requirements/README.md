@@ -47,5 +47,5 @@ User here refers to Librarian.
 | HR05 | User shall be able to update credentials | Techincal | Implemented |
 | HR06 | User shall be able to read data from a file | Techincal | TBD-S1 |
 | HR07 | Data should not be lost in case of failure | Scenario | FUTURE |
-| HR08 | Data should always be stored when closing the system | Scenario | Implemented |
+| HR08 | Data should always be stored when closing the system | Technical | Implemented |
 
