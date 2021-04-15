@@ -37,7 +37,7 @@ delete book by providing book id, search book by its name, display/view all book
     * Delete book
     * Search a book
     * View Book
-    * Update Password
+    * Update Username and Password
 
 
 ## SWOT ANALYSIS
