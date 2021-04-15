@@ -4,7 +4,8 @@
 
 | Code Quality | Unity | Git Inspector |
 |--------------|-------|---------------|
-|[![Code Quality - Static Code - Cppcheck](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml)[![CI-Coverage](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/code_coverage.yml)| |[![Contribution Check - Git Inspector](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/git_inspector.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/git_inspector.yml)|
+|[![Code Quality - Static Code - Cppcheck](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml)[![CI-Coverage](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/code_coverage.yml)
+[![Compilation](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/compilation.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/compilation.yml)| |[![Contribution Check - Git Inspector](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/git_inspector.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/git_inspector.yml)|
 
 
 
