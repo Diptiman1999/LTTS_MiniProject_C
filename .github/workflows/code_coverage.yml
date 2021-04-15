@@ -26,4 +26,4 @@ jobs:
     - name: Install gcov 
       run: sudo apt -y install gcovr
     - name: coverage
-      run: gcov -a 3_Implementation/src main.c 
+      run: gcov -a 3_Implementation/src GCOV/ main.c 
