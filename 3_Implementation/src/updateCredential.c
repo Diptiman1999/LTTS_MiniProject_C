@@ -19,6 +19,8 @@ error_t updateCredential(const char *FILE_NAME)
         printf("\nFacing issue while updating password\n");
         return FAILURE;
     }
+
+    ///Inputing new username and password
     printf("\nNew Username:");
     fflush(stdin);
     fgets(userName,MAX_SIZE_USER_NAME,stdin);

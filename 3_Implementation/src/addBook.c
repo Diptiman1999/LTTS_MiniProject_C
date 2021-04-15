@@ -12,6 +12,8 @@ error_t addBookInDataBase(const char* FILE_NAME)
         return FILE_NOT_FOUND;
     }
 
+
+    ///Details for books is Entered
     printf("\nENTER YOUR DETAILS BELOW:");
     printf("\n---------------------------------------------------------------------------\n");
     printf("\nBook ID NO  = ");
@@ -30,6 +32,7 @@ error_t addBookInDataBase(const char* FILE_NAME)
     }
     while(!status);
 
+    ///Author name is entered
     do
     {
         printf("\nAuthor Name  = ");
@@ -43,6 +46,7 @@ error_t addBookInDataBase(const char* FILE_NAME)
     }
     while(!status);
     
+    ///Student name who issued the book
     do
     {
         printf("\nStudent who Issued  = ");
@@ -55,6 +59,8 @@ error_t addBookInDataBase(const char* FILE_NAME)
         }
     }
     while(!status);
+
+    ///Date of Issued
     do
     {
         //get date year,month and day from user
@@ -68,6 +74,8 @@ error_t addBookInDataBase(const char* FILE_NAME)
         }
     }
     while(!status);
+
+    ///Operation for adding 30 days to issued date
     Date d;
     d.dd=addBook.bookIssueDate.dd;
     d.mm=addBook.bookIssueDate.mm;
@@ -76,7 +84,8 @@ error_t addBookInDataBase(const char* FILE_NAME)
     addBook.returnDate.dd=d.dd;
     addBook.returnDate.mm=d.mm;
     addBook.returnDate.yyyy=d.yyyy;
-    
+
+    ///Storing it to the file   
     fwrite(&addBook,sizeof(addBook), 1, fp);
     fclose(fp);
     return SUCCESS;

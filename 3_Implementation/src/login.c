@@ -19,7 +19,7 @@ error_t login(const char *FILE_NAME,const unsigned char userName[MAX_SIZE_USER_N
     fclose(fp);
     
 
-
+    /// Checking whether user has inputted correct username and password 
     if((!strcmp(userName,fileHeaderInfo.username)) && (!strcmp(password,fileHeaderInfo.password)))
     {
 

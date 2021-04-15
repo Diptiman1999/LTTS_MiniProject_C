@@ -2,6 +2,7 @@
 
 error_t welcomeMessage()
 {
+    ///Welcome message is Displayed
     system(CLS);
     printf("\n  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
     printf("\n  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");

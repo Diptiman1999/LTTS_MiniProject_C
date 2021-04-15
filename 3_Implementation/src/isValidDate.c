@@ -3,7 +3,7 @@
 
 error_t isValidDate(Date *validDate)
 {
-    //check range of year,month and day
+    /// check range of year,month and day
     if (validDate->yyyy > MAX_YR || validDate->yyyy < MIN_YR)
         return FAILURE;
     if (validDate->mm < 1 || validDate->mm > 12)
@@ -11,7 +11,7 @@ error_t isValidDate(Date *validDate)
     if (validDate->dd < 1 || validDate->dd > 31)
         return FAILURE;
 
-    //Handling feb days in leap year
+    /// Handling feb days in leap year
     if (validDate->mm == 2)
     {
         if (leap_year(validDate->yyyy))
@@ -29,7 +29,7 @@ error_t isValidDate(Date *validDate)
             return FAILURE;
         }
     }
-    //handle months which has only 30 days
+    /// handling months which has only 30 days
     if (validDate->mm == 4 || validDate->mm == 6 || validDate->mm == 9 || validDate->mm == 11)
         if (validDate->dd <= 30)
         {

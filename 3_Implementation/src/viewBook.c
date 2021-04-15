@@ -3,7 +3,7 @@
 error_t viewBooks(const char* FILE_NAME)
 {
     
-    
+    ///Displaying all books
     error_t print_status=FAILURE;
     s_BooksInfo Books = {0};
     

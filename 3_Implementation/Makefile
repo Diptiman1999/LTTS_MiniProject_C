@@ -1,7 +1,7 @@
 PROJ_NAME = Library
 TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
-BUILD_DIR = Build
+BUILD_DIR = BUILD
 
 SRC = src/addBook.c\
 src/addDate.c\

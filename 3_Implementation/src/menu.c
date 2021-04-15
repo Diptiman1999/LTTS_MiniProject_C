@@ -8,6 +8,7 @@ error_t menu(const char *FILE_NAME)
     
     do
     {
+        ///Displaying the main menu
         system(CLS);
         printf("MAIN MENU");
         printf("\n1.Add Books");

@@ -1,6 +1,5 @@
 #include "library_header.h"
 
-  
 int offsetDays(int d, int m, int y)
 {
     int offset = d;
@@ -37,8 +36,8 @@ int offsetDays(int d, int m, int y)
     return offset;
 }
   
-// Given a year and days elapsed in it, finds
-// date by storing results in d and m.
+/// Given a year and days elapsed in it, finds
+/// date by storing results in d and m.
 void revoffsetDays(int offset, int y, int *d, int *m)
 {
     int month[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -58,15 +57,14 @@ void revoffsetDays(int offset, int y, int *d, int *m)
     *m = i;
 }
   
-// Add x days to the given date.
+/// Add x=30 days to the given date.
 void addDays(int d1, int m1, int y1, int x, Date *d)
 {
     int offset1 = offsetDays(d1, m1, y1);
     int remDays = leap_year(y1)?(366-offset1):(365-offset1);
   
-    // y2 is going to store result year and
-    // offset2 is going to store offset days
-    // in result year.
+    /// y2 is going to store result year and
+    /// offset2 is going to store offset days in result year.
     int y2, offset2;
     if (x <= remDays)
     {
@@ -76,9 +74,8 @@ void addDays(int d1, int m1, int y1, int x, Date *d)
   
     else
     {
-        // x may store thousands of days.
-        // We find correct year and offset
-        // in the year.
+        /// x may store thousands of days.
+        /// We find correct year and offset in the year.
         x -= remDays;
         y2 = y1 + 1;
         int y2days = leap_year(y2)?366:365;
@@ -91,8 +88,7 @@ void addDays(int d1, int m1, int y1, int x, Date *d)
         offset2 = x;
     }
   
-    // Find values of day and month from
-    // offset of result year.
+    /// Find values of day and month from offset of result year.
     int m2, d2;
     revoffsetDays(offset2, y2, &d2, &m2);
     d->dd=d2;
@@ -100,7 +96,7 @@ void addDays(int d1, int m1, int y1, int x, Date *d)
     d->yyyy=y2;
 }
   
-// Driven Program
+/// Adding days
 Date addDate(Date *d)
 {
     addDays(d->dd,d->mm,d->yyyy,30,d);

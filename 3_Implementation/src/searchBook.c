@@ -1,7 +1,5 @@
 #include "library_header.h"
 
-
-
 error_t searchBooks(const char *FILE_NAME)
 {
     error_t found_status = FAILURE;
@@ -17,7 +15,7 @@ error_t searchBooks(const char *FILE_NAME)
     }
    
 
-    //put the control on books detail
+    /// put the control on books detail
     if (fseek(fp,FILE_HEADER_SIZE,SEEK_SET) != 0)
     {
         fclose(fp);
@@ -35,6 +33,8 @@ error_t searchBooks(const char *FILE_NAME)
             break;
         }
     }
+
+    ///Displaying the books details if available
     if(found_status)
     {
         printf("\nBook id = %u\n",Book.books_id);

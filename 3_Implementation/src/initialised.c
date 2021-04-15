@@ -10,11 +10,11 @@ error_t initialise(const char *FILE_NAME)
     status = isFileExists(FILE_NAME);
     if(status==-1)
     {
-        //Creating the binary file
+        /// Creating the binary file
         fp = fopen(FILE_NAME,"wb");
         if(fp != NULL)
         {
-            //Copy default password
+            /// Copy default password
             strncpy(fileHeaderInfo.username,defaultUsername,sizeof(defaultUsername));
             strncpy(fileHeaderInfo.password,defaultPassword,sizeof(defaultPassword));
             fwrite(&fileHeaderInfo,FILE_HEADER_SIZE, 1, fp);
