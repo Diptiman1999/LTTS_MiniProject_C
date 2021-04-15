@@ -1,8 +1,8 @@
-# Architecture
+# Behavior Diagrams
 
-* Add UML Diagrams
-* For information about UML Diagrams refer: [UML Diagrams](https://www.uml-diagrams.org/uml-25-diagrams.html)
-## Tools 
-* [Draw.io](https://app.diagrams.net/)
-* [Creately](https://app.creately.com/diagram/create)
-* or any other free tools
+## Use Case Diagram
+![UsecaseDiagram](https://github.com/Diptiman1999/LTTS_MiniProject_C/blob/master/2_Architecture/behavior%20Diagrams/Use_Case%20Diagrams.png)
+
+## Activity Diagram
+![ActivityDiagram](https://github.com/Diptiman1999/LTTS_MiniProject_C/blob/master/2_Architecture/behavior%20Diagrams/Activity%20Diagram.png)
+
