@@ -18,13 +18,13 @@ The main objective of the Library Management system is discipline of the plannin
 8. Cost-effective
 
 ## Cost And Features with time
-COST – more features more more cost
-FEATURES
-* Add books
-* Search books
-* View books
-* Delete books
-* Update Credentials
+* COST – more features more more cost
+* FEATURES
+   * Add books
+   * Search books
+   * View books
+   * Delete books
+   * Update Credentials
 
 ## Defining Our System
 Libray Management System is where the manager(The Librarian) can login to system by providing username and password, 
