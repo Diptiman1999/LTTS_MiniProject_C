@@ -2,18 +2,15 @@
 
 error_t welcomeMessage()
 {
-    headMessage("www.aticleworld.com");
-    printf("\n\n\n\n\n");
-    printf("\n\t\t\t  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
-    printf("\n\t\t\t        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    printf("\n\t\t\t        =                 WELCOME                   =");
-    printf("\n\t\t\t        =                   TO                      =");
-    printf("\n\t\t\t        =                 LIBRARY                   =");
-    printf("\n\t\t\t        =               MANAGEMENT                  =");
-    printf("\n\t\t\t        =                 SYSTEM                    =");
-    printf("\n\t\t\t        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-    printf("\n\t\t\t  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
-    printf("\n\n\n\t\t\t Enter any key to continue.....");
+    system(CLS);
+    printf("\n  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
+    printf("\n  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    printf("\n  =                 LIBRARY                   =");
+    printf("\n  =               MANAGEMENT                  =");
+    printf("\n  =                 SYSTEM                    =");
+    printf("\n  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    printf("\n  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
+    printf("\n\n\n Enter any key to continue.....");
     getchar();
 
     return SUCCESS;

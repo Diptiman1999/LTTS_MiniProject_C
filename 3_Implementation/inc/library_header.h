@@ -19,7 +19,7 @@
 #define MIN_YR  1900
 #define MAX_SIZE_USER_NAME 30
 #define MAX_SIZE_PASSWORD  20
-#define FILE_NAME  "LibraryBooksDetails.bin"
+
 
 // Defined For Books
 #define MAX_BOOK_NAME   50
@@ -38,9 +38,6 @@
 #endif
 
 
-
-
-
 /**
  * @brief For error Handling
  * 
@@ -49,7 +46,8 @@ typedef enum error_t
 {
     FILE_NOT_FOUND=-1,
 	FAILURE=0,
-    SUCCESS=1
+    SUCCESS=1,
+    NOT_FOUND=2
 	
 }error_t;
 
@@ -84,7 +82,7 @@ typedef struct
     char bookName[MAX_BOOK_NAME];
     char authorName[MAX_AUTHOR_NAME];
     char studentName[MAX_STUDENT_NAME];
-    char studentAddr[MAX_STUDENT_ADDRESS];
+    Date returnDate;
     Date bookIssueDate;
 } s_BooksInfo;
 
@@ -121,13 +119,7 @@ error_t printMessageCenter(const char* message);
  * @param message 
  * @return error_t 
  */
-error_t headMessage(const char *message);
 
-/**
- * @brief This function displays the first welcomes screen of the “Library management system project” and asks the user to press any key to access the library application.
- * 
- * @return error_t 
- */
 error_t welcomeMessage();
 
 
@@ -142,11 +134,13 @@ error_t isNameValid(const char *name);
 
 
 error_t isValidDate(Date *validDate);
-error_t menu();
-error_t addBookInDataBase();
-error_t searchBooks();
-error_t viewBooks();
-error_t deleteBooks();
-error_t updateCredential();
-error_t login();
+error_t menu(const char *FILE_NAME);
+error_t addBookInDataBase(const char *FILE_NAME);
+error_t searchBooks(const char *FILE_NAME);
+error_t viewBooks(const char *FILE_NAME);
+error_t deleteBooks(const char *FILE_NAME);
+error_t updateCredential(const char *FILE_NAME);
+error_t login(const char *FILE_NAME,const unsigned char username[],const unsigned char password[]);
+Date addDate(Date *d);
+int leap_year(int year);
 #endif

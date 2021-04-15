@@ -1,10 +1,9 @@
 #include "library_header.h"
 
-
-error_t addBookInDataBase()
+error_t addBookInDataBase(const char* FILE_NAME)
 {
     int days;
-    s_BooksInfo addBookInfoInDataBase = {0};
+    s_BooksInfo addBook = {0};
     FILE *fp = NULL;
     error_t status = FAILURE;
     fp = fopen(FILE_NAME,"ab+");
@@ -13,62 +12,73 @@ error_t addBookInDataBase()
         printf("File is not opened\n");
         error_t FILE_NOT_FOUND;
     }
-    error_t head_status=headMessage("ADD NEW BOOKS");
-    printf("\n\n\t\t\tENTER YOUR DETAILS BELOW:");
-    printf("\n\t\t\t---------------------------------------------------------------------------\n");
-    printf("\n\t\t\tBook ID NO  = ");
+
+    printf("\nENTER YOUR DETAILS BELOW:");
+    printf("\n---------------------------------------------------------------------------\n");
+    printf("\nBook ID NO  = ");
     fflush(stdin);
-    scanf("%u",&addBookInfoInDataBase.books_id);
+    scanf("%u",&addBook.books_id);
     do
     {
-        printf("\n\t\t\tBook Name  = ");
+        printf("\nBook Name  = ");
         fflush(stdin);
-        fgets(addBookInfoInDataBase.bookName,MAX_BOOK_NAME,stdin);
-        status = isNameValid(addBookInfoInDataBase.bookName);
+        fgets(addBook.bookName,MAX_BOOK_NAME,stdin);
+        status = isNameValid(addBook.bookName);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("Book name violated the types. Please enter again.");
         }
     }
     while(!status);
+
     do
     {
-        printf("\n\t\t\tAuthor Name  = ");
+        printf("\nAuthor Name  = ");
         fflush(stdin);
-        fgets(addBookInfoInDataBase.authorName,MAX_AUTHOR_NAME,stdin);
-        status = isNameValid(addBookInfoInDataBase.authorName);
+        fgets(addBook.authorName,MAX_AUTHOR_NAME,stdin);
+        status = isNameValid(addBook.authorName);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("\nName contain invalid character. Please enter again.");
         }
     }
     while(!status);
+    
     do
     {
-        printf("\n\t\t\tStudent Name  = ");
+        printf("\nStudent who Issued  = ");
         fflush(stdin);
-        fgets(addBookInfoInDataBase.studentName,MAX_STUDENT_NAME,stdin);
-        status = isNameValid(addBookInfoInDataBase.studentName);
+        fgets(addBook.studentName,MAX_STUDENT_NAME,stdin);
+        status = isNameValid(addBook.studentName);
         if (!status)
         {
-            printf("\n\t\t\tName contain invalid character. Please enter again.");
+            printf("\nName contain invalid character. Please enter again.");
         }
     }
     while(!status);
     do
     {
         //get date year,month and day from user
-        printf("\n\t\t\tEnter date in format (day/month/year): ");
-        scanf("%d/%d/%d",&addBookInfoInDataBase.bookIssueDate.dd,&addBookInfoInDataBase.bookIssueDate.mm,&addBookInfoInDataBase.bookIssueDate.yyyy);
+        printf("\nEnter date in format (day/month/year) when it was issue: ");
+        scanf("%d/%d/%d",&addBook.bookIssueDate.dd,&addBook.bookIssueDate.mm,&addBook.bookIssueDate.yyyy);
         //check date validity
-        status = isValidDate(&addBookInfoInDataBase.bookIssueDate);
+        status = isValidDate(&addBook.bookIssueDate);
         if (!status)
         {
             printf("\n\t\t\tPlease enter a valid date.\n");
         }
     }
     while(!status);
-    fwrite(&addBookInfoInDataBase,sizeof(addBookInfoInDataBase), 1, fp);
+    Date d;
+    d.dd=addBook.bookIssueDate.dd;
+    d.mm=addBook.bookIssueDate.mm;
+    d.yyyy=addBook.bookIssueDate.yyyy;
+    addDate(&d);
+    addBook.returnDate.dd=d.dd;
+    addBook.returnDate.mm=d.mm;
+    addBook.returnDate.yyyy=d.yyyy;
+    
+    fwrite(&addBook,sizeof(addBook), 1, fp);
     fclose(fp);
     return SUCCESS;
 }

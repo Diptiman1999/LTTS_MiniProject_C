@@ -1,33 +1,35 @@
 #include "library_header.h"
 
 
-error_t searchBooks()
+
+error_t searchBooks(const char *FILE_NAME)
 {
-    error_t found_status = SUCCESS;
+    error_t found_status = FAILURE;
     char bookName[MAX_BOOK_NAME] = {0};
-    s_BooksInfo addBookInfoInDataBase = {0};
+    s_BooksInfo Book = {0};
     FILE *fp = NULL;
     int status = 0;
     fp = fopen(FILE_NAME,"rb");
     if(fp == NULL)
     {
-        printf("\n\t\t\tFile is not opened\n");
+        printf("\nFile is not opened\n");
         return FILE_NOT_FOUND;
     }
-    error_t head_status=headMessage("SEARCH BOOKS");
+   
+
     //put the control on books detail
     if (fseek(fp,FILE_HEADER_SIZE,SEEK_SET) != 0)
     {
         fclose(fp);
-        printf("\n\t\t\tFacing issue while reading file\n");
+        printf("\nFacing issue while reading file\n");
         return FAILURE;
     }
-    printf("\n\n\t\t\tEnter Book Name to search:");
+    printf("\nEnter Book Name to search:");
     fflush(stdin);
     fgets(bookName,MAX_BOOK_NAME,stdin);
-    while (fread (&addBookInfoInDataBase, sizeof(addBookInfoInDataBase), 1, fp))
+    while (fread(&Book, sizeof(Book), 1, fp))
     {
-        if(!strcmp(addBookInfoInDataBase.bookName, bookName))
+        if(!strcmp(bookName,Book.bookName))
         {
             found_status = SUCCESS;
             break;
@@ -35,20 +37,22 @@ error_t searchBooks()
     }
     if(found_status)
     {
-        printf("\n\t\t\tBook id = %u\n",addBookInfoInDataBase.books_id);
-        printf("\t\t\tBook name = %s",addBookInfoInDataBase.bookName);
-        printf("\t\t\tBook authorName = %s",addBookInfoInDataBase.authorName);
-        printf("\t\t\tBook issue date(day/month/year) =  (%d/%d/%d)",addBookInfoInDataBase.bookIssueDate.dd,
-               addBookInfoInDataBase.bookIssueDate.mm, addBookInfoInDataBase.bookIssueDate.yyyy);
-        //return SUCCESS;
+        printf("\nBook id = %u\n",Book.books_id);
+        printf("\nBook name = %s",Book.bookName);
+        printf("\nBook authorName = %s",Book.authorName);
+        printf("\nBook issued by student = %s",Book.studentName);
+        printf("\nBook issue date(day/month/year) =  (%d/%d/%d)",Book.bookIssueDate.dd,
+               Book.bookIssueDate.mm, Book.bookIssueDate.yyyy);
+        printf("\nBook return date(day/month/year) =  (%d/%d/%d)",Book.returnDate.dd,
+               Book.returnDate.mm, Book.returnDate.yyyy);
     }
     else
     {
-        printf("\n\t\t\tNo Record");
-        found_status= FAILURE;
+        printf("\nNo Book by this name");
+        found_status= NOT_FOUND;
     }
     fclose(fp);
-    printf("\n\n\n\t\t\tPress any key to go to main menu.....");
+    printf("\nPress any key to go to main menu.....");
     getchar();
     return found_status;
 }

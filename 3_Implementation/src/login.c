@@ -1,13 +1,14 @@
 #include "library_header.h"
-error_t login()
+error_t login(const char *FILE_NAME,const unsigned char userName[MAX_SIZE_USER_NAME],const unsigned char password[MAX_SIZE_PASSWORD])
 {
-    unsigned char userName[MAX_SIZE_USER_NAME] = {0};
-    unsigned char password[MAX_SIZE_PASSWORD] = {0};
-    int L=0;
+  
     sFileHeader fileHeaderInfo = {0};
+    
     FILE *fp = NULL;
-    error_t head_mstatus,login_status=SUCCESS;
-    head_mstatus=headMessage("Login");
+
+    error_t login_status=SUCCESS;
+    
+    
     fp = fopen(FILE_NAME,"rb");
     if(fp == NULL)
     {
@@ -16,31 +17,18 @@ error_t login()
     }
     fread (&fileHeaderInfo,FILE_HEADER_SIZE, 1, fp);
     fclose(fp);
-    do
+    
+
+
+    if((!strcmp(userName,fileHeaderInfo.username)) && (!strcmp(password,fileHeaderInfo.password)))
     {
-        printf("\n\n\n\t\t\t\tUsername:");
-        fgets(userName,MAX_SIZE_USER_NAME,stdin);
-        printf("\n\t\t\t\tPassword:");
-        fgets(password,MAX_SIZE_PASSWORD,stdin);
-        if((!strcmp(userName,fileHeaderInfo.username)) && (!strcmp(password,fileHeaderInfo.password)))
-        {
-            error_t status_menu=menu();
-            
-        }
-        else
-        {
-            printf("\t\t\t\tLogin Failed Enter Again Username & Password\n\n");
-            L++;
-        }
+
+        error_t status_menu=menu(FILE_NAME);
     }
-    while(L<=3);
-    if(L>3)
+    else
     {
-        error_t head_status=headMessage("Login Failed");
-        printf("\t\t\t\tSorry,Unknown User.");
-        getchar();
-        system(CLS);
+        printf("\t\t\t\tLogin Failed Enter Again Username & Password\n\n");
         return FAILURE;
     }
-    return login_status;
+    return SUCCESS;
 }

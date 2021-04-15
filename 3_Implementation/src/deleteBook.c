@@ -1,17 +1,18 @@
 #include "library_header.h"
 
-error_t deleteBooks()
+error_t deleteBooks(const char *FILE_NAME)
 {
+
     error_t val;
-    int found = 0;
+    error_t found_status = FAILURE;
     int bookDelete = 0;
+    
     sFileHeader fileHeaderInfo = {0};
-    char bookName[MAX_BOOK_NAME] = {0};
-    s_BooksInfo addBookInfoInDataBase = {0};
-    FILE *fp = NULL;
-    FILE *tmpFp = NULL;
-    int status = 0;
-    error_t head_status=headMessage("Delete Books Details");
+    s_BooksInfo Books = {0};
+    
+    FILE *fp = NULL; ///Permanent pointer
+    FILE *tmpFp = NULL;///Temporary pointer
+    
     fp = fopen(FILE_NAME,"rb");
     if(fp == NULL)
     {
@@ -25,35 +26,37 @@ error_t deleteBooks()
         printf("File is not opened\n");
         return FILE_NOT_FOUND;
     }
+
     fread (&fileHeaderInfo,FILE_HEADER_SIZE, 1, fp);
     fwrite(&fileHeaderInfo,FILE_HEADER_SIZE, 1, tmpFp);
-    printf("\n\t\t\tEnter Book ID NO. for delete:");
+
+    printf("\nEnter Book ID NO. for delete:");
     scanf("%d",&bookDelete);
-    while (fread (&addBookInfoInDataBase, sizeof(addBookInfoInDataBase), 1, fp))
+    while (fread (&Books, sizeof(Books), 1, fp))
     {
-        if(addBookInfoInDataBase.books_id != bookDelete)
+        if(Books.books_id != bookDelete)
         {
-            fwrite(&addBookInfoInDataBase,sizeof(addBookInfoInDataBase), 1, tmpFp);
+            fwrite(&Books,sizeof(Books), 1, tmpFp);
+            found_status=SUCCESS;
         }
         else
         {
-            found = 1;
+            found_status = FAILURE;
         }
     }
-    if(found)
+    if(found_status)
     {
-        printf("\n\t\t\tRecord deleted successfully.....");
-        val= SUCCESS;
+        printf("\nRecord deleted successfully.....");
+        
     }
     else    
     {
-        printf("\n\t\t\tRecord not found");
-        val= FAILURE;
+        printf("\nRecord not found");
     }
     
     fclose(fp);
     fclose(tmpFp);
     remove(FILE_NAME);
     rename("tmp.bin",FILE_NAME);
-    return val;
+    return SUCCESS;
 }

@@ -1,16 +1,6 @@
 #include "library_header.h"
 
 
-// Function to check leap year.
-//Function returns 1 if leap year
-int  IsLeapYear(int year)
-{
-    return (((year % 4 == 0) &&
-             (year % 100 != 0)) ||
-            (year % 400 == 0));
-}
-// returns 1 if given date is valid.
-
 error_t isValidDate(Date *validDate)
 {
     //check range of year,month and day
@@ -24,7 +14,7 @@ error_t isValidDate(Date *validDate)
     //Handling feb days in leap year
     if (validDate->mm == 2)
     {
-        if (IsLeapYear(validDate->yyyy))
+        if (leap_year(validDate->yyyy))
         {
             if(validDate->dd <= 29)
             {
