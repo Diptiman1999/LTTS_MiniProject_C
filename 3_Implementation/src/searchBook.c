@@ -49,7 +49,7 @@ error_t searchBooks(const char *FILE_NAME)
     else
     {
         printf("\nNo Book by this name");
-        found_status= NOT_FOUND;
+        return NOT_FOUND;
     }
     fclose(fp);
     printf("\nPress any key to go to main menu.....");

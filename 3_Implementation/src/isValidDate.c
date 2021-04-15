@@ -24,7 +24,7 @@ error_t isValidDate(Date *validDate)
         }
         else
         {
-            if (validDate->dd <= 28);
+            if (validDate->dd <= 28)
                 return SUCCESS;
             return FAILURE;
         }

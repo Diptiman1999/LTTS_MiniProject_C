@@ -10,7 +10,7 @@ error_t addBookInDataBase(const char* FILE_NAME)
     if(fp == NULL)
     {
         printf("File is not opened\n");
-        error_t FILE_NOT_FOUND;
+        return FILE_NOT_FOUND;
     }
 
     printf("\nENTER YOUR DETAILS BELOW:");
