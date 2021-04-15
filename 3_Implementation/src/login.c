@@ -6,7 +6,7 @@ error_t login(const char *FILE_NAME,const unsigned char userName[MAX_SIZE_USER_N
     
     FILE *fp = NULL;
 
-    error_t login_status=SUCCESS;
+
     
     
     fp = fopen(FILE_NAME,"rb");

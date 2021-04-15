@@ -8,9 +8,9 @@ int main()
     
     int login_count=1;
     
-    error_t status_login=SUCCESS;
-    error_t status_initialise = initialise(FILE_NAME);
-    error_t status_welcome=welcomeMessage();
+    error_t status=SUCCESS;
+    status = initialise(FILE_NAME);
+    status=welcomeMessage();
 
     do
     { 
@@ -18,9 +18,9 @@ int main()
         fgets(userName,MAX_SIZE_USER_NAME,stdin);
         printf("\nPassword:");
         fgets(password,MAX_SIZE_PASSWORD,stdin);
-        error_t status_login=login(FILE_NAME,userName,password);
+        status=login(FILE_NAME,userName,password);
         login_count+=1;
-    }while(status_login==0 && login_count<=3);
+    }while(status==0 && login_count<=3);
 
     if(login_count>3)
     {

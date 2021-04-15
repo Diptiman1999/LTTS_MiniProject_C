@@ -3,14 +3,11 @@
 error_t viewBooks(const char* FILE_NAME)
 {
     
-    char bookName[MAX_BOOK_NAME] = {0};
     
     error_t print_status=FAILURE;
     s_BooksInfo Books = {0};
     
     FILE *fp = NULL;
-    int status = 0;
-    
     unsigned int countBook = 1;
 
     fp = fopen(FILE_NAME,"rb");
@@ -28,7 +25,7 @@ error_t viewBooks(const char* FILE_NAME)
     while (fread (&Books, sizeof(Books), 1, fp))
     {
         printf("\n----------------------------------------------------");
-        printf("\nBook Count = %d",countBook);
+        printf("\nBook Count = %u",countBook);
         printf("\nBook id = %u",Books.books_id);
         printf("\nBook name = %s",Books.bookName);
         printf("\nBook authorName = %s",Books.authorName);

@@ -3,8 +3,7 @@
 error_t deleteBooks(const char *FILE_NAME)
 {
 
-    error_t val;
-    error_t found_status = FAILURE;
+    error_t val;   error_t found_status = FAILURE;
     int bookDelete = 0;
     
     sFileHeader fileHeaderInfo = {0};

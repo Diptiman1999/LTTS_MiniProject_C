@@ -2,7 +2,6 @@
 
 error_t addBookInDataBase(const char* FILE_NAME)
 {
-    int days;
     s_BooksInfo addBook = {0};
     FILE *fp = NULL;
     error_t status = FAILURE;

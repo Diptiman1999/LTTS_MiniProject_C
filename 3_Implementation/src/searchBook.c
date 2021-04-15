@@ -8,7 +8,7 @@ error_t searchBooks(const char *FILE_NAME)
     char bookName[MAX_BOOK_NAME] = {0};
     s_BooksInfo Book = {0};
     FILE *fp = NULL;
-    int status = 0;
+
     fp = fopen(FILE_NAME,"rb");
     if(fp == NULL)
     {
