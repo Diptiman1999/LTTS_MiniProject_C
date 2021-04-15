@@ -36,10 +36,10 @@ Feature ID | Features
  
 The idea and logic was used from [Library Management](https://aticleworld.com/library-management-system-project-in-c/). I changed it to multifile programming, added error enum values to avoid confusion, added new feature to add 30 days to issued date so to know the return date and made the code comparatively easy to understand.  
  
- ## Resources Used
- [Library Management](https://aticleworld.com/library-management-system-project-in-c/)
- [Project Report of Library Management System ](https://www.daitm.org.in/wp-content/uploads/2019/04/Gr.-06library-project-report.p)
- [File using C](https://www.programiz.com/c-programming/c-file-input-output)
+## Resources Used
+* [Library Management](https://aticleworld.com/library-management-system-project-in-c/)
+* [Project Report of Library Management System ](https://www.daitm.org.in/wp-content/uploads/2019/04/Gr.-06library-project-report.p)
+* [File using C](https://www.programiz.com/c-programming/c-file-input-output)
  
  
  
