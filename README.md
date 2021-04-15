@@ -2,6 +2,11 @@
 ![Library](https://github.com/Diptiman1999/LTTS_MiniProject_C/blob/master/1_Requirements/library.jpg)
 
 
+|BUILD | Code Quality | Unity |
+|------|--------------|-------|
+|      |[![Code Quality - Static Code - Cppcheck](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Diptiman1999/LTTS_MiniProject_C/actions/workflows/cppcheck.yml)| |
+
+
 
 ## Folder Structure
 Folder             | Description
