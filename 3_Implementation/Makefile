@@ -52,9 +52,10 @@ test: $(SRC) $(TEST_SRC)
 
 coverage:${PROJECT_NAME}
 	gcc -fprofile-arcs -ftest-coverage $(SRC) $(TEST_SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC)) < test/test_input.txt
 	gcov -a $(SRC)
-	$(RM) *.gcda *gcno
+	$(RM) *.gcda 
+	$(RM) *.gcno
 
 staticcheck::$(SRC)
 	cppcheck --enable=all main.c $(SRC)
