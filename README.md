@@ -34,7 +34,7 @@ Feature ID | Features
  F7 | Check for valid name
  F8 | Check for valid date
  
-The idea and logic was used from [Library Management](https://aticleworld.com/library-management-system-project-in-c/). I changed it to multifile programming, added error enum values to avoid confusion, added new feature to add 30 days to issued date so to know the return date and made the code comparatively easy to understand.  
+The idea and logic was used from [Library Management](https://aticleworld.com/library-management-system-project-in-c/). I changed it to multifile programming, added error enum values to avoid confusion, added new feature to add 30 days to issued date so to know the return date and made the code comparatively easier to understand.  
  
 ## Challenges faced and How was it overcomed
 | No. | Challenge | Solution|
