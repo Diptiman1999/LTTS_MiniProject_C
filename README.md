@@ -36,6 +36,15 @@ Feature ID | Features
  
 The idea and logic was used from [Library Management](https://aticleworld.com/library-management-system-project-in-c/). I changed it to multifile programming, added error enum values to avoid confusion, added new feature to add 30 days to issued date so to know the return date and made the code comparatively easy to understand.  
  
+## Challenges faced and How was it overcomed
+| No. | Challenge | Solution|
+| 1 |Writing test cases was difficult because the program usually takes user input | All the user input was stored in test_input.txt file and then run the test cases |
+| 2 |Date Issuse was generated while calculating return date | it was solved using date addition algorithm |
+| 3 |After Deleting the book no message for deletion status was shown | There was an error which was returning SUCCESS directly without printing the message, so I changed the return status after only displaying the message |
+| 4 |Search result was not showing while search is completed | There wass error generating automatically which the compiler couldn't find it. it was solved using gdb |
+
+
+
 ## Resources Used
 * [Library Management](https://aticleworld.com/library-management-system-project-in-c/)
 * [Project Report of Library Management System ](https://www.daitm.org.in/wp-content/uploads/2019/04/Gr.-06library-project-report.p)
