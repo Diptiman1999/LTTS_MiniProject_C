@@ -61,8 +61,7 @@ staticcheck::$(SRC)
 	cppcheck --enable=all main.c $(SRC)
 
 memcheck:
-	valgrind $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
-
+	valgrind $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC)) < test/test_input.txt
 
 doc:
 	make -C doc
