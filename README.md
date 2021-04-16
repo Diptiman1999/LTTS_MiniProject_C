@@ -38,6 +38,7 @@ The idea and logic was used from [Library Management](https://aticleworld.com/li
  
 ## Challenges faced and How was it overcomed
 | No. | Challenge | Solution|
+|-----|-----------|---------|
 | 1 |Writing test cases was difficult because the program usually takes user input | All the user input was stored in test_input.txt file and then run the test cases |
 | 2 |Date Issuse was generated while calculating return date | it was solved using date addition algorithm |
 | 3 |After Deleting the book no message for deletion status was shown | There was an error which was returning SUCCESS directly without printing the message, so I changed the return status after only displaying the message |
