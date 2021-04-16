@@ -20,7 +20,7 @@ Folder             | Description
 
 PS No. |  Name   |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -------|---------|----------------|----------------|---------------|-------------|--------------
-264725 | Diptiman Senapati  | F1,F2,F3,F4,f5,F6,F7,F8    |      |    | 11   |11 
+264725 | Diptiman Senapati  | F1,F2,F3,F4,f5,F6,F7,F8    |      |    | 10   |10 
 
 
 Feature ID | Features
