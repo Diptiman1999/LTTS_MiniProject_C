@@ -40,9 +40,9 @@ The idea and logic was used from [Library Management](https://aticleworld.com/li
 | No. | Challenge | Solution|
 |-----|-----------|---------|
 | 1 |Writing test cases was difficult because the program usually takes user input | All the user input was stored in test_input.txt file and then run the test cases |
-| 2 |Date issuse was generated while calculating return date | It was solved using date addition algorithm |
+| 2 |Date issues was generated while calculating return date | It was solved using date addition algorithm |
 | 3 |After Deleting the book no message for deletion status was shown | There was an error which was returning SUCCESS directly without printing the message, so I changed the return status after only displaying the message |
-| 4 |Search result was not showing while search is completed | There wass error generating automatically which the compiler couldn't find it. it was solved using gdb |
+| 4 |Search result was not showing while search is completed | There was error generating automatically which the compiler couldn't find it. it was solved using gdb |
 
 
 
